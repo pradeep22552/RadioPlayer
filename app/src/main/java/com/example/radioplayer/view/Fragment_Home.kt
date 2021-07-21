@@ -11,6 +11,7 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 
 import androidx.lifecycle.Observer
+import com.bumptech.glide.Glide
 
 import com.example.radioplayer.R
 import com.example.radioplayer.utils.Resultres
@@ -75,7 +76,7 @@ class Fragment_Home : Fragment() {
                 Resultres.Status.SUCCESS -> {
                     result.data?.let { list ->
                        txt_song.setText(list.get(0).name )
-
+                        Glide.with(requireView()).load(list.get(0).image_url ).into(img_song)
 
                     }
 
